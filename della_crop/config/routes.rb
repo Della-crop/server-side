@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # alert patient fall down route
   post '/alert' => 'patients#alert'
   post '/call' => 'patients#call'
+  get '/' => 'pages#home'
 end
