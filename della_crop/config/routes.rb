@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   post '/alert' => 'patients#alert'
   post '/call' => 'patients#call'
   get '/' => 'pages#home'
+  get '/all' => 'patients#get_all_patient'
+  post '/add' => 'patients#new'
+  # put '/update' => ''
+  # get '/patient' => ''
 end
