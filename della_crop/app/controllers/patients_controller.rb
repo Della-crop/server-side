@@ -21,5 +21,16 @@ class PatientsController < ApplicationController
     render json: @patient
   end
 
-  def update; end
+  def update
+    @patient = Patient.find_by(params[:id])
+    @patient.update(
+      params.permit(
+        :first_name,
+        :last_name,
+        :room_number,
+        :smart_watch_SN
+      )
+    )
+  end
+
 end
