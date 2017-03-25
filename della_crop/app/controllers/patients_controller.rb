@@ -33,4 +33,9 @@ class PatientsController < ApplicationController
     )
   end
 
+  def destory
+    @patient = Patient.find_by(params[:id])
+    @patient.destory()
+  end
+
 end
