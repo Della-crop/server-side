@@ -14,7 +14,14 @@ class PatientsController < ApplicationController
     @patient.save
   end
 
-  def fetch_patient; end
+  def fetch_patient_by_id
+    @patient = Patient.find_by(params[:id])
+    render json: @patient
+  end
+
+  def fetch_patient_by_name
+    @patient = Patient.find_by(params[:first_name])
+  end
 
   def fetch_all_patient
     @patient = Patient.all
@@ -33,9 +40,8 @@ class PatientsController < ApplicationController
     )
   end
 
-  def destory
+  def destroy
     @patient = Patient.find_by(params[:id])
-    @patient.destory()
+    @patient.destroy
   end
-
 end
